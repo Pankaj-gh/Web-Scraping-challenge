@@ -50,14 +50,59 @@
 
                 <h3>Featured Mars Image</h3>
                 <img src={{ listing.featured_image_url }}>
-                {% endfor %}
+
+            </div>
+            <div class="col-md-4">
+
+                <h3>Mars Facts</h3>
+                <table>{{ listing.table}}</table>
+
+
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>Mars Hemispheres</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+
+                {% for url in listing.hemisphere_image_urls %}
+                <img id="image" src={{ url.image_url1 }}>
+                <h6>{{ url.title1 }}</h6>
+                
 
 
 
+            </div>
+            <div class="col-md-6">
+
+                <img id="image" src={{ url.image_url2 }}>
+                <h6>{{ url.title2 }}</h6>
+                
+                 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+
+                
+                <img id="image" src={{ url.image_url3 }}>
+                <h6>{{ url.title3 }}</h6>
+                
 
 
 
+            </div>
+            <div class="col-md-6">
+                
+                <img id="image" src={{ url.image_url4 }}>
+                <h6>{{ url.title4 }}</h6>
+                
+                 {% endfor %} 
+                 {% endfor %}
+            </div>
+        </div>
     </div>
 </body>

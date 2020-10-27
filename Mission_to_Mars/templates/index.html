@@ -34,14 +34,22 @@
         <div class="row">
             <div class="col-md-12">
                 {% for listing in listing_results %}
-                <h4>{{ listing.news_title }}</h4>
-                {% endfor %}
+                <h3>{{ listing.news_title }}</h3>
+
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                {% for listing in listing_results %}
+
                 <p>{{ listing.news_p }}</p>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+
+                <h3>Featured Mars Image</h3>
+                <img src={{ listing.featured_image_url }}>
                 {% endfor %}
             </div>
         </div>

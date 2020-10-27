@@ -46,9 +46,9 @@ def scrape():
     imags=soup.find_all("a",class_="fancybox")
     large_img=[]
     for image in imags:
-        featured_image_url=image['data-fancybox-href']
-        large_img.append(featured_image_url)
-
+        featured_image=image['data-fancybox-href']
+        large_img.append(featured_image)
+    featured_image_url=("https://www.jpl.nasa.gov"+featured_image)
 
     # #Creating and assigning URL
 

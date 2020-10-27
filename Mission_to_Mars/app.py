@@ -13,11 +13,19 @@ collections = mongo.db.mars_collection
 collections.drop()
 
 @app.route('/')
-def home():
-    results=list(listings.find())
-    return render_template('index.html',listing_results=results)
+def index():
+    listing_results=collections.find()
+    return render_template('index.html',listing_results=listing_results)
 
 @app.route("/scrape")
 def scraper():
 
     scraped_data=scrape_mars.scrape()
+    collections.insert_many(scraped_data)
+
+
+    return redirect("/")
+
+
+if __name__ == "__main__":
+    app.run(debug=True)

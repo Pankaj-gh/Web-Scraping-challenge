@@ -25,7 +25,7 @@ def scrape():
 
     # # Assigining desired values to required variables
 
-    news_title=soup.find("li",class_="slide").h3.text.split()
+    news_title=soup.find("li",class_="slide").h3.text.strip()
     news_p=soup.find("div",class_="article_teaser_body").text.strip()
 
 
@@ -70,9 +70,9 @@ def scrape():
 
     df=df.set_index('Description')
 
-    df
+    # df
 
-    browser.quit()
+    
     html_table = df.to_html()
     # # print(html_table)
 
@@ -105,7 +105,7 @@ def scrape():
         soup = BeautifulSoup(html, 'html.parser')
         img_url=soup.find_all('img',class_="wide-image")[0]['src']
         img_urls.append(img_url)
-    browser.quit()
+    
 
     hemisphere_image_urls=[{"title":"Cerberus Hemisphere Enhanced","image_url":"/cache/images/f5e372a36edfa389625da6d0cc25d905_cerberus_enhanced.tif_full.jpg"},
                         {"title":"Schiaparelli Hemisphere Enhanced","image_url":"/cache/images/3778f7b43bbbc89d6e3cfabb3613ba93_schiaparelli_enhanced.tif_full.jpg"},

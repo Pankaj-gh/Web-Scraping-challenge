@@ -17,6 +17,7 @@ def scrape():
     
     # #Creating and Assigining URL
     browser = init_browser()
+    listings=[]
     url='https://mars.nasa.gov/news/'
     browser.visit(url)
     html=browser.html
@@ -116,7 +117,10 @@ def scrape():
     main_dict={"news_title":news_title,"news_p":news_p,"featured_image_url":featured_image_url,"table":html_table," hemisphere_image_urls": hemisphere_image_urls}
 
 
-    return main_dict
+
+    listings.append(main_dict)
+
+    return listings
 
 
 

@@ -1,0 +1,46 @@
+{% for url in listing.hemisphere_image_urls %}
+            <div class="card" style="width: 18rem; height: 18rem">
+
+                <img id="image" src={{ url.image_url1 }}>
+                <h6>{{ url.title1}}</h6>
+
+
+
+
+            </div>
+            <div class="col-md-6">
+
+                <img id="image" src={{ url.image_url2 }}>
+                <h6>{{ url.title2 }}</h6>
+                {% endfor %}
+
+
+
+
+            </div>
+        </div>
+        <div class="row">
+            {% for url in listing.hemisphere_image_urls %}
+
+            <div class="col-md-6">
+
+
+                <img id="image" src={{ url.image_url3 }}>
+                <h6>{{ url.title3}}</h6>
+
+
+
+
+            </div>
+            <div class="col-md-6">
+
+                <img id="image" src={{ url.image_url4 }}>
+                <h6>{{ url.title4 }}</h6>
+                {% endfor %}
+                {% endfor %}
+                
+
+
+
+            </div>
+        </div>

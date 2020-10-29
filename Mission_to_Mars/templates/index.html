@@ -44,10 +44,10 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8  ">
           <h3>Featured Mars Image</h3>
-          <img id="image" src= {{ listing.featured_image_url }}>
-          {% endfor %}
+          <img id="image" src= {{ listing.featured_image_url }} style='height: 750px; width:725px'>
+          
             
         </div>
       
@@ -116,6 +116,16 @@
         <div class="col">
           <h3 class="text-center">Mars Hemispheres</h3>
         </div>
+      </div>
+      <div class='row'>
+        {% for url in listing.hemisphere_image_urls %}
+        <div class='col-6'>
+            <img src='{{ url.image_url}}' style='height: 400px; width:400px;' class="mx-auto d-block">
+            <h3 style='font-size: 20px; text-align: center;'>{{url.title}}</h3>
+        </div>
+        {% endfor %}
+        {% endfor %}
+
         
           
 

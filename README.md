@@ -8,4 +8,6 @@ For part -1 it grabs the latest headline and content from the mars website along
 For part -2 the above scraped content are stored in their respective variables and passed within a funciton in the scrape_mars.py file
 The app.py file is used to import the scrape_mars.py file and call this scrpae function and the content is renderd on an HTML page.
 
+The screenshots of the html page are added to the template folder within the repository
+
 Libraries such as BS4,splinter,pandas were heavily used including, bootstrap for HTML and Mongo DB for app.py
